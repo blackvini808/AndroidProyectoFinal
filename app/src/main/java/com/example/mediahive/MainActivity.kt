@@ -31,14 +31,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
-import com.example.mediahive.ui.theme.MediaHiveTheme
-import kotlinx.coroutines.delay
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.mediahive.pantallas.PantallaHome
+import com.example.mediahive.ui.theme.MediaHiveTheme
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

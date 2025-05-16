@@ -64,4 +64,8 @@ dependencies {
     //ComposeFoundation
     implementation("androidx.compose.foundation:foundation:1.8.1")
 
+    //Animación
+    implementation("com.google.accompanist:accompanist-navigation-animation:0.34.0")
+
+
 }
