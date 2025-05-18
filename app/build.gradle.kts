@@ -66,6 +66,20 @@ dependencies {
 
     //Animación
     implementation("com.google.accompanist:accompanist-navigation-animation:0.34.0")
+    implementation ("androidx.compose.animation:animation:1.6.0")
+    implementation ("androidx.compose.animation:animation-graphics:1.6.0")
+
+    implementation ("androidx.compose.material3:material3:1.2.0")  // o versión más reciente
+    implementation ("androidx.compose.ui:ui:1.6.0")
+
+    implementation ("androidx.compose.material:material-icons-core:1.6.0")  // Para íconos base
+    implementation ("androidx.compose.material:material-icons-extended:1.6.0")  // Íconos adicionales
+
+    // Para cargar imágenes desde URL (Coil)
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Para manejo de clics
+    implementation ("androidx.compose.foundation:foundation:1.6.0")
 
 
 }
