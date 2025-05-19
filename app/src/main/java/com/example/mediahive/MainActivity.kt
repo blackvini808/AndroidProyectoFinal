@@ -35,7 +35,9 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.mediahive.pantallas.PantallaDespues
 import com.example.mediahive.pantallas.PantallaHome
+import com.example.mediahive.pantallas.PantallaMiLista
 import com.example.mediahive.ui.theme.MediaHiveTheme
 import kotlinx.coroutines.delay
 
@@ -46,12 +48,38 @@ class MainActivity : ComponentActivity() {
         setContent {
             MediaHiveTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "inicio") {
+
+                NavHost(
+                    navController = navController,
+                    startDestination = "inicio"
+                ) {
+                    // Pantalla de inicio/autenticación
                     composable("inicio") {
-                        PantallaInicio(navController)
+                        PantallaInicio(
+                            navController = navController
+                        )
                     }
+
+                    // Pantalla principal
                     composable("home") {
-                        PantallaHome() // <- Asegúrate de tener esta composable
+                        PantallaHome(
+                            navController = navController,  // ✅ Cambio: Hice el parámetro no-nullable
+                            onVerMiLista = { navController.navigate("mi_lista") },
+                            onVerDespues = { navController.navigate("ver_despues") }  // ✅ Cambio: Añadí este parámetro
+                        )
+                    }
+
+                    // Pantalla Mi Lista
+                    composable("mi_lista") {
+                        PantallaMiLista(
+                            onBack = { navController.popBackStack() }
+                        )
+                    }
+                    // Pantalla Ver Después (nueva)
+                    composable("ver_despues") {  // ✅ Cambio: Añadí esta pantalla
+                        PantallaDespues(
+                            onBack = { navController.popBackStack() }
+                        )
                     }
                 }
             }
@@ -60,7 +88,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun PantallaInicio(navController: NavController) {
+fun PantallaInicio(
+    navController: NavController
+) {
     val mostrarBoton = remember { mutableStateOf(false) }
 
     // Mostrar botón luego de 2 segundos
@@ -130,7 +160,7 @@ fun PantallaInicio(navController: NavController) {
                 .offset(y = 300.dp) // Aprox. 471px desde el centro
         ) {
             Button(
-                onClick = { navController.navigate("home") },
+                onClick = { navController.navigate("home")},
                 shape = RoundedCornerShape(50),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1DCD9F)),
                 modifier = Modifier
