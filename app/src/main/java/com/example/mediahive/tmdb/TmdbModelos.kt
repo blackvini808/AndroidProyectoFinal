@@ -9,5 +9,6 @@ data class TmdbItem(
     val title: String?,
     val name: String?,
     val poster_path: String?,
-    val media_type: String?
+    val media_type: String?,
+    val overview: String?
 )

@@ -67,8 +67,10 @@ fun ItemListaPreview() {
             id = 1,
             titulo = "Ejemplo de Película",
             genero = "Acción",
+            sinopsis = "",
             colorPlaceholder = Color(0xFF03DAC6),
-            enMiLista = true
+            enMiLista = true,
+            paraVerDespues = true,
         )
     )
 }

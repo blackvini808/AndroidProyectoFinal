@@ -77,7 +77,7 @@ fun PantallaSeleccion(
                         .aspectRatio(16f / 9)
                 ) {
                     AsyncImage(
-                        model = contenido.colorPlaceholder,
+                        model = contenido.imagenUrl,
                         contentDescription = contenido.titulo,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
@@ -129,7 +129,7 @@ fun PantallaSeleccion(
 
                 // Sinopsis
                 Text(
-                    text = contenido.sinopsis ?: "Descripción no disponible",
+                    text = contenido.sinopsis,
                     color = Color.White.copy(alpha = 0.8f),
                     modifier = Modifier.padding(16.dp)
                 )

@@ -6,9 +6,9 @@ data class Contenido(
     val id: Int,                  // ID de TMDB
     val titulo: String,
     val genero: String,
-    val tipo: String = "movie",   // Valor por defecto ("movie" o "tv")
+    val tipo: String = "movie",    // Valor por defecto ("movie" o "tv")
     val imagenUrl: String = "",   // URL completa ej: "https://image.tmdb.org/t/p/w500/abc123.jpg"
-    val sinopsis: String? = null,
+    val sinopsis: String,
     val esFavorito: Boolean = false,
     val enMiLista: Boolean = false,
     val paraVerDespues: Boolean = false,

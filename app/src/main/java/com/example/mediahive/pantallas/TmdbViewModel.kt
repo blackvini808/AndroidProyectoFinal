@@ -7,10 +7,8 @@ import com.example.mediahive.modelos.Contenido
 import com.example.mediahive.tmdb.TmdbClient
 import com.example.mediahive.tmdb.toContenido
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
-import androidx.lifecycle.viewModelScope  // ← Esta es la importante
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class TmdbViewModel : ViewModel() {
@@ -29,7 +27,7 @@ class TmdbViewModel : ViewModel() {
             try {
                 val response = TmdbClient.service.buscarContenido(
                     query = query,
-                    apiKey = "TU_API_KEY"  // No olvides poner tu API key real aquí
+                    apiKey = "994c29f0cadf98b5663f80cc93326e4f"  // No olvides poner tu API key real aquí
                 )
                 _resultadosBusqueda.value = response.results.map { it.toContenido() }
                 _error.value = null
